@@ -1,150 +1,100 @@
 # resumatic
+
 Resumes that wins bids, or CVs ¯\_(ツ)_/¯
 
-## Installation
+## Project
 
-```sh
-npm install --save @raphiniert/ra-data-postgrest
-```
+This project is constructed used AWS native and managed services. They are
+deployed using the [Serverless Framework](https://www.serverless.com/). The
+current deployment creates the following architecture diagram. There are a few
+resources such as IAM Role, policies and security groups that are not
+represented on this diagram.
 
-## REST Dialect
-
-This Data Provider fits REST APIs using simple GET parameters for filters and sorting. This is the dialect used for instance in [PostgREST](http://postgrest.org).
-
-| Method             | API calls
-|--------------------|----------------------------------------------------------------
-| `getList`          | `GET http://my.api.url/posts?order=title.asc&offset=0&limit=24&filterField=eq.value`
-| `getOne`           | `GET http://my.api.url/posts?id=eq.123`
-| `getMany`          | `GET http://my.api.url/posts?id=in.(123,456,789)`
-| `getManyReference` | `GET http://my.api.url/posts?author_id=eq.345`
-| `create`           | `POST http://my.api.url/posts`
-| `update`           | `PATCH http://my.api.url/posts?id=eq.123`
-| `updateMany`       | `PATCH http://my.api.url/posts?id=in.(123,456,789)`
-| `delete`           | `DELETE http://my.api.url/posts?id=eq.123`
-| `deleteMany`       | `DELETE http://my.api.url/posts?id=in.(123,456,789)`
-
-**Note**: The PostgREST data provider expects the API to include a `Content-Range` header in the response to `getList` calls. The value must be the total number of resources in the collection. This allows react-admin to know how many pages of resources there are in total, and build the pagination controls.
-
-```
-Content-Range: posts 0-24/319
-```
-
-If your API is on another domain as the JS code, you'll need to whitelist this header with an `Access-Control-Expose-Headers` [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) header.
-
-```
-Access-Control-Expose-Headers: Content-Range
-```
+![](./.generated_diagrams/current-architecture.svg)
 
 ## Usage
 
-```jsx
-// in src/App.js
-import React from 'react';
-import { Admin, Resource } from 'react-admin';
-import postgrestRestProvider from '@raphiniert/ra-data-postgrest';
+CLI tools and scripts use the AWS SDK and CLI. Access Keys, secrets and regions
+will need to be configured prior to running any of the tools or deploying agents.
 
-import { PostList } from './posts';
+### Environment Variables
 
-const App = () => (
-    <Admin dataProvider={postgrestRestProvider('http://path.to.my.api/')}>
-        <Resource name="posts" list={PostList} />
-    </Admin>
-);
+We recommend using [Direnv](https://direnv.net/) for managing environment
+variables. A stage which serverless consumes is also used in the utility
+commands as well. For an example environment configuration see below.
 
-export default App;
+```shell
+export STAGE=dev
+export DB_PORT=5432
+export DB_NAME=postgres
+export DB_USERNAME=test
+export DB_PASSWORD=password-to-change
+export DB_SCHEMA=listings
+export DB_ANON_ROLE=anon
 ```
 
-### Adding Custom Headers
+These variables can also be passed in as command-line arguments to Serverless, e.g.
 
-The provider function accepts an HTTP client function as second argument. By default, they use react-admin's `fetchUtils.fetchJson()` as HTTP client. It's similar to HTML5 `fetch()`, except it handles JSON decoding and HTTP error codes automatically.
-
-That means that if you need to add custom headers to your requests, you just need to *wrap* the `fetchJson()` call inside your own function:
-
-```jsx
-import { fetchUtils, Admin, Resource } from 'react-admin';
-import postgrestRestProvider from '@raphiniert/ra-data-postgrest';
-
-const httpClient = (url, options = {}) => {
-    if (!options.headers) {
-        options.headers = new Headers({ Accept: 'application/json' });
-    }
-    // add your own headers here
-    options.headers.set('X-Custom-Header', 'foobar');
-    return fetchUtils.fetchJson(url, options);
-};
-const dataProvider = postgrestRestProvider('http://localhost:3000', httpClient);
-
-render(
-    <Admin dataProvider={dataProvider} title="Example Admin">
-       ...
-    </Admin>,
-    document.getElementById('root')
-);
+```shell
+npm run sls deploy -- -s some_stage --DB_PORT 1234 --DB_PASSWORD aBetterPassword
 ```
 
-Now all the requests to the REST API will contain the `X-Custom-Header: foobar` header.
+### Deploying
 
-**Tip**: The most common usage of custom headers is for authentication. `fetchJson` has built-on support for the `Authorization` token header:
+To deploy everything, run:
 
-```js
-const httpClient = (url, options = {}) => {
-    options.user = {
-        authenticated: true,
-        token: 'SRTRDFVESGNJYTUKTYTHRG'
-    };
-    return fetchUtils.fetchJson(url, options);
-};
+```shell
+npm install
+cd cli-tools
+npm install
+npm run build
+cd ..
+npm run sls deploy -- -s $STAGE
 ```
 
-Now all the requests to the REST API will contain the `Authorization: SRTRDFVESGNJYTUKTYTHRG` header.
+### Testing
 
-### Using authProvider
-This package also comes with an [authProvider](https://github.com/marmelab/react-admin/blob/master/docs/Authentication.md) for react-admin which enables you to enable authentification. The provider is designed to work together with [subzero-starter-kit](https://github.com/subzerocloud/subzero-starter-kit). This starter kit sends the JWT within a session cookie. The authProvider expects that. If you want to use postgREST without the starter kit you'll need to write your own. Feel free to contribute!
+You will need to generate a user. From can be done from a command line tool from
+the root directory.
 
-With one of the starter kits it is very easy to use the authProvider:
-```jsx
-// in src/App.js
-import React from 'react';
-import { Admin, Resource } from 'react-admin';
-import postgrestRestProvider, { authProvider } from '@raphiniert/ra-data-postgrest';
-
-import { PostList } from './posts';
-
-const App = () => (
-    <Admin dataProvider={postgrestRestProvider('http://path.to.my.api/')} 
-           authProvider={authProvider}>
-        <Resource name="posts" list={PostList} />
-    </Admin>
-);
-
-export default App;
+```shell
+./tools add-user --username <Username> --password <Password> --email <Email> --role <standard/admin>
 ```
 
-### Special Filter Feature
-As postgRest allows several comparators, e.g. `ilike`, `like`, `eq`... 
-The dataProvider is designed to enable you to specify the comparator in your react filter component:
+The user will need to have either standard or admin for the role types. These are
+what align with the postgres roles.
 
-```jsx
-<Filter {...props}>
-  <TextInput label="Search" source="post_title@ilike" alwaysOn />
-  <TextInput label="Search" source="post_author" alwaysOn />
-  // some more filters
-</Filter>
+To get a token from that user to use with the api requests use the command line
+tool.
+
+```shell
+./tools get-token --username <Username> --password <Password>
 ```
 
-One can simply append the comparator with an `@` to the source. In this example the field `post_title` would be filtered with `ilike` whereas `post_author` would be filtered using `eq` which is the default if no special comparator is specified.
+To change the role a user has in cognito use the following command.
 
-
-### Compound primary keys
-If one has data resources without primary keys named `id`, one will have to define this specifically. Also, if there is a primary key, which is defined over multiple columns:
-
-```jsx
-const dataProvider = postgrestRestProvider(API_URL, fetchUtils.fetchJson, 'eq', new Map([
-  ['some_table',    ['custom_id']],
-  ['another_table', ['first_column', 'second_column']],
-]));
+```shell
+./tools change-user-role --username <Username> --role <standard/admin>
 ```
 
-## License
+### Postgrest Config
 
-This data provider is licensed under the MIT License and sponsored by [raphiniert.com](https://raphiniert.com).
+Internally, the lambda handler generates a PostgREST configuration. If you want
+to test outside the AWS lambda environment, the generated configuration needs to -
+at a minimum - have the following data:
+
+```
+db-uri = "postgres://<DB_USERNAME>:<DB_PASSWORD>@<HOST>:<DB_PORT>/<DB_NAME>"
+db-schema = "<DB_SCHEMA>"
+db-anon-role = "<DB_ANON_ROLE>"
+```
+
+Note the double quotes around string variables; these are important. For the
+full list of configuration variables you can set, see the
+[PostgREST documentation](https://postgrest.org/en/latest/configuration.html).
+
+### Utility Commands
+
+Some commands are available to make background tasks easier.
+
+See [Commands Readme](cli-tools/README.md) for how to use them.
