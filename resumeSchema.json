@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Resume schema",
+  "description": "Specification of what should be in the json payload of a resume.",
+  "properties": {
+    "name": {
+      "description": "The name of the person who has the resume.",
+      "type": "string"
+    },
+    "image": {
+      "description": "Big beautiful head of Rory",
+      "type": "string",
+      "media": {
+        "binaryEncoding": "base64",
+        "type": "image/jpeg"
+      }
+    },
+    "qualifications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "skills": {
+      "type": "object",
+      "properties": {
+        "technicalSkills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "humanSkills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "strategicSkills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "jobs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "The job title best suited for the role.",
+            "type": "string"
+          },
+          "project": {
+            "description": "The name of the project worked on, including org name",
+            "type": "string"
+          },
+          "responsibilities": {
+            "description": "The role and responsibilities undertaken as part of the job.",
+            "type": "string"
+          },
+          "techs": {
+            "description": "The list of technologies utilized in the job",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "startDate": {
+            "description": "The start date for the project.",
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "description": "The end date for the project",
+            "type": "string",
+            "format": "date",
+            "required": false
+          }
+        }
+      }
+    }
+  }
+}

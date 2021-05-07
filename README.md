@@ -1,6 +1,6 @@
 # resumatic
 
-Resumes that wins bids, or CVs ¯\_(ツ)_/¯
+Resumes that wins bids, or CVs ¯\_(ツ)\_/¯
 
 ## Project
 
@@ -31,6 +31,12 @@ export DB_USERNAME=test
 export DB_PASSWORD=password-to-change
 export DB_SCHEMA=listings
 export DB_ANON_ROLE=anon
+export AWS_REGION=ap-southeast-2
+# For login: (Sean's Ids)
+export REACT_APP_AWS_REGION="ap-southeast-2"
+export REACT_APP_COGNITO_IDENTITY_ID="unused"
+export REACT_APP_COGNITO_USER_POOL_ID="ap-southeast-2_9y53D9NEU"
+export REACT_APP_COGNITO_WEB_CLIENT_ID="3340vaq49dc2d9alrn77k6gaa"
 ```
 
 These variables can also be passed in as command-line arguments to Serverless, e.g.
@@ -41,6 +47,8 @@ npm run sls deploy -- -s some_stage --DB_PORT 1234 --DB_PASSWORD aBetterPassword
 
 ### Deploying
 
+YOU NEED NODE 14
+
 To deploy everything, run:
 
 ```shell
@@ -50,6 +58,7 @@ npm install
 npm run build
 cd ..
 npm run sls deploy -- -s $STAGE
+npm run sls client deploy
 ```
 
 ### Testing
@@ -98,3 +107,12 @@ full list of configuration variables you can set, see the
 Some commands are available to make background tasks easier.
 
 See [Commands Readme](cli-tools/README.md) for how to use them.
+
+### Add permission to role to access table
+
+```sql
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA resumatic TO admin;
+GRANT ALL ON resumatic.resume TO admin;
+GRANT INSERT ON resumatic.resume TO admin;
+GRANT SELECT ON resumatic.resume TO admin;
+```
