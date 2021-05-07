@@ -1,5 +1,6 @@
 # resumatic
-Resumes that wins bids, or CVs ¯\_(ツ)_/¯
+
+Resumes that wins bids, or CVs ¯\\_(ツ)_/¯
 
 ## Installation
 
