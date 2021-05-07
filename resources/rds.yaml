@@ -34,7 +34,7 @@ Resources:
   lambdaExecutionPolicy:
     Type: AWS::IAM::ManagedPolicy
     Properties:
-      ManagedPolicyName: RDSExecuteLambda
+      ManagedPolicyName: ${self:service}-${self:provider.stage}-RDSExecuteLambda
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
