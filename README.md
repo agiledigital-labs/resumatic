@@ -106,3 +106,12 @@ full list of configuration variables you can set, see the
 Some commands are available to make background tasks easier.
 
 See [Commands Readme](cli-tools/README.md) for how to use them.
+
+### Add permission to role to access table
+
+```sql
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA resumatic TO admin;
+GRANT ALL ON resumatic.resume TO admin;
+GRANT INSERT ON resumatic.resume TO admin;
+GRANT SELECT ON resumatic.resume TO admin;
+```
