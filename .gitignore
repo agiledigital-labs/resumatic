@@ -4,3 +4,4 @@ node_modules
 .serverless
 .generated_diagrams/
 .envrc
+[._]*.swp
