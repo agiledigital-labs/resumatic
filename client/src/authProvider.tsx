@@ -15,7 +15,14 @@ function LoginDone() {
   const redirect = useRedirect();
 
   useEffect(() => {
-    redirect("/")
+    const foo = async () => {
+      const sesh = await Auth.currentSession()
+      if (sesh !== undefined) {
+        redirect("/")
+      }
+    }
+    // Old dangly boi promise
+    foo();
   },
   // array of variables that can trigger an update if they change. Pass an
   // an empty array if you just want to run it once after component mounted.

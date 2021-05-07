@@ -14,6 +14,7 @@
     "amazon-cognito-identity-js": "^4.6.1",
     "amplify-redux-auth": "^0.1.11",
     "envalid": "^7.1.0",
+    "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^3.15.0",
     "react": "^17.0.2",

@@ -72,6 +72,7 @@ functions:
       - httpApi:
           path: /{proxy+}
           method: '*'
+          cors: true
     environment:
       <<: *databaseCommonEnvs
       DB_SCHEMA: ${self:custom.DB_SCHEMA}
