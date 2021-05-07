@@ -32,6 +32,11 @@ export DB_PASSWORD=password-to-change
 export DB_SCHEMA=listings
 export DB_ANON_ROLE=anon
 export AWS_REGION=ap-southeast-2
+# For login: (Sean's Ids)
+export REACT_APP_AWS_REGION="ap-southeast-2"
+export REACT_APP_COGNITO_IDENTITY_ID="unused"
+export REACT_APP_COGNITO_USER_POOL_ID="ap-southeast-2_9y53D9NEU"
+export REACT_APP_COGNITO_WEB_CLIENT_ID="3340vaq49dc2d9alrn77k6gaa"
 ```
 
 These variables can also be passed in as command-line arguments to Serverless, e.g.
