@@ -1,0 +1,44 @@
+{
+  "name": "low-ceremony-postgrest",
+  "version": "1.0.0",
+  "description": "Creating low ceremony APIs over data using PostgREST",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agiledigital-labs/low-ceremony-postgrest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agiledigital-labs/low-ceremony-postgrest/issues"
+  },
+  "homepage": "https://github.com/agiledigital-labs/low-ceremony-postgrest#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sls": "serverless",
+    "build:migrationsLayer": "tsc src/migrations/**.ts --outDir .build/migrations; zip -r -j '.serverless/migrationsArtifact.zip' .build/migrations",
+    "build:lambdaLayer": "zip -r -j '.serverless/postgrestArtifact.zip' src/layers/postgrest",
+    "update:lambdaJwks": "./tools encode-jwks --silent | ./tools update-jwks-env --sls-file \"serverless.yml\""
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.75",
+    "@types/wait-on": "^5.2.0",
+    "husky": "^6.0.0",
+    "serverless": "^2.34.0",
+    "serverless-hooks-plugin": "^1.1.0",
+    "serverless-offline": "^6.9.0",
+    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-prune-plugin": "^1.5.0",
+    "serverless-scriptable-plugin": "^1.1.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.888.0",
+    "axios": "^0.21.1",
+    "dedent-js": "^1.0.1",
+    "deepmerge": "^4.2.2",
+    "envalid": "^7.1.0",
+    "node-pg-migrate": "^5.9.0",
+    "ts-retry": "^2.3.2"
+  }
+}

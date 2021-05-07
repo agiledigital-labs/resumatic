@@ -1,0 +1,9 @@
+Resources:
+  sqsEventQueue:
+    Type: AWS::SQS::Queue
+Outputs:
+  QueueUrl:
+    Description: Url for the SQS Queue Async events
+    Value: !Ref sqsEventQueue
+    Export:
+      Name: ${self:service}-${self:provider.stage}-QueueUrl

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "lib": ["ES2020"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "preserveConstEnums": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "ES2020",
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
