@@ -18,6 +18,7 @@
 import sys
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, GPT2Tokenizer, GPT2LMHeadModel
 from flask import Flask, json, request
+from flask_cors import CORS, cross_origin
 
 if sys.argv[1] == '--server':
     server_mode = True
@@ -108,8 +109,10 @@ def gen_responses(engineer_name, job_info, tags, initial_profile=None):
 def start_server():
     print('Starting the HTTP server.')
     api = Flask(__name__)
+    CORS(api)
 
     @api.route('/generate-profile', methods=['POST'])
+    @cross_origin()
     def generate_profile():
         data = request.get_json()
         engineer_name = data.get('engineer_name')
