@@ -58,6 +58,7 @@ npm install
 npm run build
 cd ..
 npm run sls deploy -- -s $STAGE
+npm run sls client deploy
 ```
 
 ### Testing

@@ -18,6 +18,7 @@
     "sls": "serverless",
     "build:migrationsLayer": "tsc src/migrations/**.ts --outDir .build/migrations; zip -r -j '.serverless/migrationsArtifact.zip' .build/migrations",
     "build:lambdaLayer": "zip -r -j '.serverless/postgrestArtifact.zip' src/layers/postgrest",
+    "build:client": "cd client && npm run build",
     "update:lambdaJwks": "./tools encode-jwks --silent | ./tools update-jwks-env --sls-file \"serverless.yml\""
   },
   "devDependencies": {
@@ -40,6 +41,7 @@
     "envalid": "^7.1.0",
     "node-pg-migrate": "^5.9.0",
     "pg": "^8.6.0",
+    "serverless-finch": "^2.6.0",
     "ts-retry": "^2.3.2"
   }
 }
