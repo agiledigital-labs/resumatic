@@ -1,4 +1,4 @@
-import { Admin, Resource, ListGuesser, fetchUtils} from 'react-admin';
+import { Admin, Resource, ListGuesser, fetchUtils, ShowGuesser, EditGuesser} from 'react-admin';
 import postgrestRestProvider, {
 } from '@raphiniert/ra-data-postgrest';
 import { authProvider, LoginPage } from './authProvider';
@@ -28,7 +28,7 @@ const App = () => (
     customSagas={[authSagas]}
     loginPage={LoginPage}
   >
-    <Resource name="jobs" list={ListGuesser} />
+    <Resource name="resume" list={ListGuesser} show={ShowGuesser} edit={EditGuesser} />
   </Admin>
 );
 
