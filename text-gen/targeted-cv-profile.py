@@ -17,27 +17,33 @@
 
 import sys
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, GPT2Tokenizer, GPT2LMHeadModel
+from flask import Flask, json, request
 
-# Read in the data.
-print('Reading the input data.')
+if sys.argv[1] == '--server':
+    server_mode = True
+else:
+    # Read in the data.
+    print('Reading the input data.')
 
-engineer_name = sys.argv[1]
+    server_mode = False
+    engineer_name = sys.argv[1]
 
-with open(sys.argv[2], 'r') as f:
-    job_info = f.read()
-with open(sys.argv[3], 'r') as f:
-    tags = f.read().split(',')
-with open(sys.argv[4], 'r') as f:
-    initial_profile = f.read()
+    with open(sys.argv[2], 'r') as f:
+        job_info = f.read()
+    with open(sys.argv[3], 'r') as f:
+        tags = [tag.strip() for tag in f.read().split(',')]
+    if len(sys.argv) >= 3:
+        with open(sys.argv[4], 'r') as f:
+            initial_profile = f.read()
 
 # Download and init the pretrained model.
 # These steps take a really long time with gpt-neo-2.7B, so we're not currently using it.
+print('Loading the tokenizer.')
 #tokenizer = AutoTokenizer.from_pretrained('EleutherAI/gpt-neo-2.7B') #, output_loading_info=True)
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-print('Loading the tokenizer.')
 
-#model = AutoModelForCausalLM.from_pretrained('EleutherAI/gpt-neo-2.7B') #, output_loading_info=True)
 print('Loading the model.')
+#model = AutoModelForCausalLM.from_pretrained('EleutherAI/gpt-neo-2.7B') #, output_loading_info=True)
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 # Make a pipeline we can feed questions to.
@@ -45,7 +51,7 @@ print('Making the pipeline.')
 generate_text = pipeline('text-generation', model=model, tokenizer=tokenizer)
 
 # Some examples for the AI.
-prefix = '''
+example_responses = '''
 Steven's experience with research:
 Steven has demonstrated his abilities in analysing issues and preparing options for potential solutions, and his work with Clearmind Innovation Engineering (CIE) demonstrates this most clearly. Outside of his research and development work, Steven’s day-to-day tasks regularly included detailed analysis of features and improvements proposed for the CIE product range.
 
@@ -62,30 +68,63 @@ Max's experience with Python:
 Through her consulting work with Primeware, Max has installed, configured and managed large-scale Hadoop deployments and oversaw implementation of jobs ranging over map reduce, HDFS, AWS. She personally developed multiple map reduce jobs in HIVE and PID for data cleaning and pre-processing stages.
 
 -----------------------
-
 '''
 
-# Some context for the AI.
-prefix += (engineer_name +
-    ' is applying for a job. Here is the job description: ' +
-    '\n' +
-    job_info +
-    '\n' +
-    'Here is ' + engineer_name + '\'s CV: ' +
-    initial_profile)
+def gen_responses(engineer_name, job_info, tags, initial_profile=None):
+    # Give the AI some context.
+    prefix = (example_responses +
+        '\n' +
+        engineer_name +
+        ' is applying for a job. Here is the job description:\n' +
+        job_info)
 
-# Iterate through the tags and generate a small number of targeted sentences for each.
-for tag in tags:
-    prompt = (engineer_name + '\'s experience with ' + tag + ':\n')
-    print('Prompt: ' + prompt)
-    gen = generate_text(
-            prompt,
-            prefix=prefix,
-            do_sample=True,
-            temperature=0.9,
-            min_length=40,
-            max_length=90)
-    generated_text = gen[0]['generated_text']
-    # Remove the prompt, clean it up and print it.
-    # TODO: Should we remove the last sentence if it's short and incomplete?
-    print(generated_text[len(prompt):].replace('\n', ' '))
+    if initial_profile is not None and initial_profile != '':
+        prefix += ('\n\nHere is ' +
+                engineer_name +
+                '\'s CV: ' +
+                initial_profile)
+
+    prefix += '\n\n'
+
+    # Iterate through the tags and generate a small number of targeted sentences for each.
+    responses = {}
+    for tag in tags:
+        prompt = (engineer_name + '\'s experience with ' + tag + ':\n')
+        print('Generating text for the prompt "' + prompt + '"')
+        gen = generate_text(
+                prompt,
+                prefix=prefix,
+                do_sample=True,
+                temperature=0.9,
+                min_length=40,
+                max_length=90)
+        generated_text = gen[0]['generated_text']
+        # Remove the prompt, clean it up and add it to the return value.
+        # TODO: Should we remove the last sentence if it's short and incomplete?
+        responses[tag] = generated_text[len(prompt):].replace('\n', ' ')
+
+    return responses
+
+def start_server():
+    print('Starting the HTTP server.')
+    api = Flask(__name__)
+
+    @api.route('/generate-profile', methods=['POST'])
+    def generate_profile():
+        data = request.get_json()
+        engineer_name = data.get('engineer_name')
+        job_info = data.get('job_info')
+        tags = data.get('tags')
+        initial_profile = data.get('initial_profile')
+        print("Generating profile for ", engineer_name, ' ', job_info, ' ', tags, ' ', initial_profile)
+        resp = json.dumps(gen_responses(engineer_name, job_info, tags, initial_profile))
+        print("Response: ", resp)
+        return resp
+
+    api.run(host='0.0.0.0', port=58050)
+
+if __name__ == '__main__':
+    if server_mode:
+        start_server()
+    else:
+        print(gen_responses(engineer_name, job_info, tags, initial_profile))
