@@ -1,0 +1,39 @@
+@startuml "Current Architecture"
+
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v7.0/dist
+!include AWSPuml/AWSCommon.puml
+!include AWSPuml/Compute/Lambda.puml
+!include AWSPuml/Database/RDSPostgreSQLinstance.puml
+!include AWSPuml/SecurityIdentityAndCompliance/Cognito.puml
+!include AWSPuml/ApplicationIntegration/SQS.puml
+!include AWSPuml/NetworkingAndContentDelivery/APIGateway2.puml
+
+actor "User" as user
+rectangle postgrest
+
+APIGateway2(apiGateway, "", "", "")
+Lambda(postgrestHandler, "postgrestLambda", "HTTP Trigger", "Postgrest handler")
+Lambda(cognitoToken, "cognitoPreTokenGenerator", "Cognito PreAuth Trigger", "Cognito add claims handler")
+Lambda(asyncProcessing, "asyncEventProcessing", "", "Handles Postgres events")
+Lambda(futureAsyncHandler, "asyncHandler", "SQS Trigger", "Handles processing SQS messages")
+RDSPostgreSQLinstance(postgres, "rdsDBInstance", "v13.2 R1", "")
+SQS(queue, "sqsEventQueue", "", "Storage for insert events")
+Cognito(cognito, "userPool", "Userpool", "")
+
+user -right-> cognito: Authenication request
+cognitoToken <-left-> cognito: Modify claims
+cognito -left-> user: Token response
+
+user -down-> apiGateway: Make HTTP request
+apiGateway -right-> postgrestHandler
+postgrestHandler -right-> postgrest: Starts postgrest inside the Lambda [1]
+postgrest -up-> cognito: Validates token from supplied JWKs [2]
+postgrest -right-> postgres: [3]
+postgres -left-> postgrest: [4]
+postgrest -left-> postgrestHandler: [5]
+postgrestHandler -left-> apiGateway
+postgres -right-> asyncProcessing: Insert events on listings.listings table
+asyncProcessing -down-> queue
+queue .left.> futureAsyncHandler: Future comsuming lambda
+
+@enduml

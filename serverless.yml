@@ -1,0 +1,111 @@
+service: low-ceremony-postgrest
+
+frameworkVersion: '2'
+variablesResolutionMode: 20210326
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  region: ${env:AWS_REGION, 'ap-southeast-2'}
+  stage: ${opt:stage, env:STAGE, 'dev'}
+  httpApi:
+    payload: '2.0'
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - sqs:ReceiveMessage
+        - sqs:SendMessage
+      Resource:
+        - !GetAtt sqsEventQueue.Arn
+
+package:
+  individually: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-scriptable-plugin
+  - serverless-prune-plugin
+
+custom:
+  scriptHooks:
+    before:package:createDeploymentArtifacts:
+      - npm run build:migrationsLayer
+      - npm run build:lambdaLayer
+    after:aws:deploy:finalize:cleanup:
+      - npm run sls invoke -- -f migrateUp
+      - npm run update:lambdaJwks
+
+  databaseCommonEnvs: &databaseCommonEnvs
+    SERVICE: ${self:service}
+    STAGE: ${self:provider.stage}
+    DB_PORT: ${opt:DB_PORT, env:DB_PORT, 5432}
+    DB_NAME: ${opt:DB_NAME, env:DB_NAME, 'postgres'}
+    DB_USERNAME: ${opt:DB_USERNAME, env:DB_USERNAME, 'test'}
+    DB_PASSWORD: ${opt:DB_PASSWORD, env:DB_PASSWORD, 'password-to-change'}
+    DB_HOST: !GetAtt rdsDBInstance.Endpoint.Address
+  DB_SCHEMA: ${opt:DB_SCHEMA, env:DB_SCHEMA, 'default'}
+  DB_ANON_ROLE: ${opt:DB_ANON_ROLE, env:DB_ANON_ROLE, 'anon'}
+  prune:
+    automatic: true
+    includeLayers: true
+    number: 5
+  ASYNC_LAMBDA_ARN: !Join
+    - ''
+    - - 'arn:aws:lambda:${self:provider.region}:'
+      - !Ref 'AWS::AccountId'
+      - ':function:${self:service}-${self:provider.stage}-asyncEventProcessing'
+
+functions:
+  postgrestLambda:
+    handler: src/handlers/handler.index
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: '*'
+    environment:
+      <<: *databaseCommonEnvs
+      DB_SCHEMA: ${self:custom.DB_SCHEMA}
+      DB_ANON_ROLE: ${self:custom.DB_ANON_ROLE}
+    layers:
+      - { Ref: PostgrestLambdaLayer }
+
+  migrateUp:
+    handler: src/migrate.migrateUp
+    environment:
+      <<: *databaseCommonEnvs
+      ASYNC_PROCESSING_LAMBDA_ARN: ${self:custom.ASYNC_LAMBDA_ARN}
+      REGION: ${self:provider.region}
+    layers:
+      - { Ref: MigrationsLambdaLayer }
+
+  migrateDown:
+    handler: src/migrate.migrateDown
+    environment:
+      <<: *databaseCommonEnvs
+      ASYNC_PROCESSING_LAMBDA_ARN: ${self:custom.ASYNC_LAMBDA_ARN}
+      REGION: ${self:provider.region}
+    layers:
+      - { Ref: MigrationsLambdaLayer }
+
+  cognitoPreTokenGenerator:
+    handler: src/handlers/preTokenGenerator.handler
+
+  asyncEventProcessing:
+    handler: src/handlers/asyncEventProcessing.handler
+    environment:
+      SQS_QUEUE_URL: !Ref sqsEventQueue
+
+layers:
+  postgrest:
+    package:
+      artifact: .serverless/postgrestArtifact.zip
+  migrations:
+    package:
+      artifact: .serverless/migrationsArtifact.zip
+
+resources:
+  - ${file(resources/rds.yaml)}
+  - ${file(resources/cognito.yaml)}
+  - ${file(resources/sqs.yaml)}

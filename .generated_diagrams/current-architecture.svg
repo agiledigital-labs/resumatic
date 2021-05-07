@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="674px" preserveAspectRatio="none" style="width:1234px;height:674px;background:#FFFFFF;" version="1.1" viewBox="0 0 1234 674" width="1234px" zoomAndPan="magnify"><defs><filter height="300%" id="flq22g1qc22bm" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
+entity user--><ellipse cx="228.5" cy="57.5" fill="#FEFECE" filter="url(#flq22g1qc22bm)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M228.5,65.5 L228.5,92.5 M215.5,73.5 L241.5,73.5 M228.5,92.5 L215.5,107.5 M228.5,92.5 L241.5,107.5 " fill="none" filter="url(#flq22g1qc22bm)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="213" y="125.9951">User</text><!--MD5=[067953156528e5c43a3c84a0fb082c04]
+entity postgrest--><rect fill="#FEFECE" filter="url(#flq22g1qc22bm)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="91" x="516" y="322.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="526" y="345.4951">postgrest</text><!--MD5=[2aa490132f0292e9205cf6a68f36b9e7]
+entity apiGateway--><rect fill="#FFFFFF" filter="url(#flq22g1qc22bm)" height="152.5313" style="stroke:#FF9900;stroke-width:1.5;" width="113" x="7" y="264"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="93" x="17" y="285.1387">«APIGateway2»</text><line style="stroke:#FF9900;stroke-width:1.0;" x1="8" x2="119" y1="287.9688" y2="287.9688"/><line style="stroke:#FF9900;stroke-width:1.0;" x1="8" x2="119" y1="289.9688" y2="289.9688"/><image height="64" width="64" x="31.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACXklEQVR4Xu2ZMUvEMBTH7yP7BfwCji4OWXUujre43CgdRR0cDhQEHUQUHITzT/7cIyQ1bdPWvJwpfw6SJi/v16QvL72VOb4vWquwqixVgNyqALlVAXKrAuTWvwdozrbt1evFyUN4Ky50QUd0D2+NUjoAxr69ftvZC66EDeJCF/aFkSkYKQCu69MBeCVjjAPAGNu7Dw75+f69uXxenz9OAUB3GIEp2oTxsRhDAULXUXl6dDMdAEZQTMboB3Bdf3n6ouui6QBuJYxjiFEYPQD0j657g7kN5gKgUCkYnQ1c9QDgkcT9WwLAbeBNeKhBABErywH0Dk3NBsB3caDQWBcAozj3Y/yiEuosGhsVZCfRAsALbklgpXMoopJFzhIwpD3bhDYHDk3NA4CQ1+4zIiY5YVFiIosMzVoAin8HDiEKhbcoLKHODbUYADoKC94a0wuAGoRIKTIpaOy5x3VXKQDb02NjQ/7O5lESTMWURgDuTciKxS16yRiFSibMnB91APKM1/sU3zjrxziHB9aoAzDODHjrhy1RVD0DfOp0Cxc3YPb1EgqjfCNDYz5jrh/J4VDp2tELQHnrJ5R2gN6O2gGMnYTIF7sCAOJSB1B2Ol38gYZXU+6RsvhDffHvwCFEofBWXH8N8NsKWQgAw80JwK/qndvqEgAYaLP/zj4VQJJ4XgjeHsmMAPRb/ovYOUeLiHoAKEa9ThKG+WQABt/Q73bwH5iDAESNPQq6JJzoZAD5I2Os36JxACKPJBkg2W9RIoCIJJ3vd1zMkZL9Fk0FyK4KkFsVILcqQG5VgNyqALn1A6QZxl/R/TsfAAAAAElFTkSuQmCC" y="291.9688"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="10" x="58.5" y="367.1074">[]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="65.5" y="382.9326"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="65.5" y="399.2295"/><!--MD5=[1d9abaacf248dd452f46eb11cd6cffb2]
+entity postgrestHandler--><rect fill="#FFFFFF" filter="url(#flq22g1qc22bm)" height="163.1563" style="stroke:#FF9900;stroke-width:1.5;" width="182" x="155.5" y="259"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="63" x="215" y="280.1387">«Lambda»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="162" x="165.5" y="297.8203">postgrestLambda</text><image height="64" width="64" x="214.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACcUlEQVR4Xu2ZwUoEMQyG99l9Ax/BFxC8edWzB29e9VwWZEEQYdGwgVCaNn+nTacudPjxMI01X/5OMusewv3NVeugb12XFsBsLYDZWgCztQBmqxHg+Hh7enmolP51RzUC/IT33+prKEMXwNfbk653LAqgsPPXp97BS10AdJD0UjZynAnDAT6f7yiS4vWSi4YDSDCR6KV+7QFA52ecCXsAkOg5HmTCTgDjTOgCoIoSQyIdHC6Db5AJXQD6ovslBjbh++NVL/WoEYAmFOVKRRUJUqnliwklwjY1AmQFWz4PZl8TPAECmrtUe3bJ0QRnANht2AT6qZfa5AwQUMt3N8EfAJpAz4CjCT4AlE2cUI0JFONiggMAN5844z1NcACQCSD9Ec5dZnYxoRdAUkmGFGz5bEKp4darF0DySDKGc1fI9dImdQHEJ0H3R2iCPfUq1QWQPIvahAQpkYsJ7QA6P31nBxPaAbKtMHlT0EiJYMOFagQoZabvZzljyWcjvVSjRgDjbCQZa6REnSa0ANg56VVogj31bLUAGOVnJUMKzt0eEzYDHNFrQjbAnrvZX6nUZgD42TwbAE2Arpa0DaCmVKUAu+XLzvxadb78l6AUHGsbADysRgCcu2xCfBnPvWgbQKm6Irup2yaEiw8sLoQzgFFdFte4JyCJdAawqysBRoErY8IIAFg8eMRZ0EaWPwCsHAxIIg0ngzsArK4ElNp8rBoTnAFgde1BqwW7mScA78XbndQXqafou9Sa8rPEBL0bC77/iTCAni/Zq+aPiWTu2lfNnhiAxwpUfflZZKzepGFPDPDPtQBmawHM1gKYrQUwW1cP8AfjyenJIZ4BygAAAABJRU5ErkJggg==" y="301.5938"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="87" x="203" y="376.7324">[HTTP Trigger]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="248.5" y="392.5576"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="184.5" y="408.8545">Postgrest handler</text><!--MD5=[41b1d2a6edce9c9581843199b54243ad]
+entity cognitoToken--><rect fill="#FFFFFF" filter="url(#flq22g1qc22bm)" height="163.1563" style="stroke:#FF9900;stroke-width:1.5;" width="272" x="631.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="63" x="736" y="28.1387">«Lambda»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="252" x="641.5" y="45.8203">cognitoPreTokenGenerator</text><image height="64" width="64" x="735.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACcUlEQVR4Xu2ZwUoEMQyG99l9Ax/BFxC8edWzB29e9VwWZEEQYdGwgVCaNn+nTacudPjxMI01X/5OMusewv3NVeugb12XFsBsLYDZWgCztQBmqxHg+Hh7enmolP51RzUC/IT33+prKEMXwNfbk653LAqgsPPXp97BS10AdJD0UjZynAnDAT6f7yiS4vWSi4YDSDCR6KV+7QFA52ecCXsAkOg5HmTCTgDjTOgCoIoSQyIdHC6Db5AJXQD6ovslBjbh++NVL/WoEYAmFOVKRRUJUqnliwklwjY1AmQFWz4PZl8TPAECmrtUe3bJ0QRnANht2AT6qZfa5AwQUMt3N8EfAJpAz4CjCT4AlE2cUI0JFONiggMAN5844z1NcACQCSD9Ec5dZnYxoRdAUkmGFGz5bEKp4darF0DySDKGc1fI9dImdQHEJ0H3R2iCPfUq1QWQPIvahAQpkYsJ7QA6P31nBxPaAbKtMHlT0EiJYMOFagQoZabvZzljyWcjvVSjRgDjbCQZa6REnSa0ANg56VVogj31bLUAGOVnJUMKzt0eEzYDHNFrQjbAnrvZX6nUZgD42TwbAE2Arpa0DaCmVKUAu+XLzvxadb78l6AUHGsbADysRgCcu2xCfBnPvWgbQKm6Irup2yaEiw8sLoQzgFFdFte4JyCJdAawqysBRoErY8IIAFg8eMRZ0EaWPwCsHAxIIg0ngzsArK4ElNp8rBoTnAFgde1BqwW7mScA78XbndQXqafou9Sa8rPEBL0bC77/iTCAni/Zq+aPiWTu2lfNnhiAxwpUfflZZKzepGFPDPDPtQBmawHM1gKYrQUwW1cP8AfjyenJIZ4BygAAAABJRU5ErkJggg==" y="49.5938"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="155" x="690" y="124.7324">[Cognito PreAuth Trigger]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="769.5" y="140.5576"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="672.5" y="156.8545">Cognito add claims handler</text><!--MD5=[e3899563268950c654cdd74e96058858]
+entity asyncProcessing--><rect fill="#FFFFFF" filter="url(#flq22g1qc22bm)" height="163.1563" style="stroke:#FF9900;stroke-width:1.5;" width="223" x="999" y="259"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="63" x="1079" y="280.1387">«Lambda»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="203" x="1009" y="297.8203">asyncEventProcessing</text><image height="64" width="64" x="1078.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACcUlEQVR4Xu2ZwUoEMQyG99l9Ax/BFxC8edWzB29e9VwWZEEQYdGwgVCaNn+nTacudPjxMI01X/5OMusewv3NVeugb12XFsBsLYDZWgCztQBmqxHg+Hh7enmolP51RzUC/IT33+prKEMXwNfbk653LAqgsPPXp97BS10AdJD0UjZynAnDAT6f7yiS4vWSi4YDSDCR6KV+7QFA52ecCXsAkOg5HmTCTgDjTOgCoIoSQyIdHC6Db5AJXQD6ovslBjbh++NVL/WoEYAmFOVKRRUJUqnliwklwjY1AmQFWz4PZl8TPAECmrtUe3bJ0QRnANht2AT6qZfa5AwQUMt3N8EfAJpAz4CjCT4AlE2cUI0JFONiggMAN5844z1NcACQCSD9Ec5dZnYxoRdAUkmGFGz5bEKp4darF0DySDKGc1fI9dImdQHEJ0H3R2iCPfUq1QWQPIvahAQpkYsJ7QA6P31nBxPaAbKtMHlT0EiJYMOFagQoZabvZzljyWcjvVSjRgDjbCQZa6REnSa0ANg56VVogj31bLUAGOVnJUMKzt0eEzYDHNFrQjbAnrvZX6nUZgD42TwbAE2Arpa0DaCmVKUAu+XLzvxadb78l6AUHGsbADysRgCcu2xCfBnPvWgbQKm6Irup2yaEiw8sLoQzgFFdFte4JyCJdAawqysBRoErY8IIAFg8eMRZ0EaWPwCsHAxIIg0ngzsArK4ElNp8rBoTnAFgde1BqwW7mScA78XbndQXqafou9Sa8rPEBL0bC77/iTCAni/Zq+aPiWTu2lfNnhiAxwpUfflZZKzepGFPDPDPtQBmawHM1gKYrQUwW1cP8AfjyenJIZ4BygAAAABJRU5ErkJggg==" y="301.5938"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="10" x="1105.5" y="376.7324">[]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1112.5" y="392.5576"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="1024.5" y="408.8545">Handles Postgres events</text><!--MD5=[8294072fe3b7f800ed575c0d41c05c5c]
+entity futureAsyncHandler--><rect fill="#FFFFFF" filter="url(#flq22g1qc22bm)" height="179.4531" style="stroke:#FF9900;stroke-width:1.5;" width="199" x="657" y="483"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="63" x="725" y="504.1387">«Lambda»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="121" x="696" y="521.8203">asyncHandler</text><image height="64" width="64" x="724.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACcUlEQVR4Xu2ZwUoEMQyG99l9Ax/BFxC8edWzB29e9VwWZEEQYdGwgVCaNn+nTacudPjxMI01X/5OMusewv3NVeugb12XFsBsLYDZWgCztQBmqxHg+Hh7enmolP51RzUC/IT33+prKEMXwNfbk653LAqgsPPXp97BS10AdJD0UjZynAnDAT6f7yiS4vWSi4YDSDCR6KV+7QFA52ecCXsAkOg5HmTCTgDjTOgCoIoSQyIdHC6Db5AJXQD6ovslBjbh++NVL/WoEYAmFOVKRRUJUqnliwklwjY1AmQFWz4PZl8TPAECmrtUe3bJ0QRnANht2AT6qZfa5AwQUMt3N8EfAJpAz4CjCT4AlE2cUI0JFONiggMAN5844z1NcACQCSD9Ec5dZnYxoRdAUkmGFGz5bEKp4darF0DySDKGc1fI9dImdQHEJ0H3R2iCPfUq1QWQPIvahAQpkYsJ7QA6P31nBxPaAbKtMHlT0EiJYMOFagQoZabvZzljyWcjvVSjRgDjbCQZa6REnSa0ANg56VVogj31bLUAGOVnJUMKzt0eEzYDHNFrQjbAnrvZX6nUZgD42TwbAE2Arpa0DaCmVKUAu+XLzvxadb78l6AUHGsbADysRgCcu2xCfBnPvWgbQKm6Irup2yaEiw8sLoQzgFFdFte4JyCJdAawqysBRoErY8IIAFg8eMRZ0EaWPwCsHAxIIg0ngzsArK4ElNp8rBoTnAFgde1BqwW7mScA78XbndQXqafou9Sa8rPEBL0bC77/iTCAni/Zq+aPiWTu2lfNnhiAxwpUfflZZKzepGFPDPDPtQBmawHM1gKYrQUwW1cP8AfjyenJIZ4BygAAAABJRU5ErkJggg==" y="525.5938"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="82" x="715.5" y="600.7324">[SQS Trigger]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="758.5" y="616.5576"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="671" y="632.8545">Handles processing SQS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="721.5" y="649.1514">messages</text><!--MD5=[0e1fecc31e3549f2a1667c6349b56d9e]
+entity postgres--><rect fill="#FFFFFF" filter="url(#flq22g1qc22bm)" height="163.1563" style="stroke:#FF9900;stroke-width:1.5;" width="179" x="662" y="259"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="159" x="672" y="280.1387">«RDSPostgreSQLinstance»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="132" x="685.5" y="297.8203">rdsDBInstance</text><image height="64" width="64" x="719.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAEMUlEQVR4Xu2aMa/TMBSF+8c7snRk6caUiS0LYwfWDqyVEAMSEUhIDEEMSEjh4I+c59rJI2na5/DUK6tKnGv7HN/re2M3my6S5vPP+s3X3cuP2xcfVlgETPAEMsa88dXh7be8zTqLoKYEqtdf/FhEdSuuqyqCFLuGbh8IeO6lcXzXmtwKRfBMAzts5FJGn7jXOkUgzUHXG1mHm9P7H6nuWkVQwSzwG9joN9Vatxj2JlkT/4s46vwlIFt0YTXrASGo/f4rbTQi0zUTkQfvX30i6LkTLVNVqsQYBCyJLvb8MwK0pIuJTgXntHaCCByWl0OrE+KHht6G8KJKARAMlElhcfNRAsQmeqdT/SYToGuGlJoQwDl5REjQBdd0BVY/0hCJ9WKgYEAZg8SaUwkwDEmEma7Du4Z+YcVi4hH5BGUmj2F2Ib0wqdTomiFiWDFiRPrgmUEAmwKiC2sFcJ6wpC8rdGE8TCEFE7AbeHbqkFa73mHUKrYJtnITA5tKgMnTAHTkUSVMD6PW/Qozgdjr1MQEYnrgoH8q1SqxyVIChou4JravfvdhuXcTCHDR9f6gtmDtR/gjpuQhEN1i0ssJVGGNdtma823iQljGrWICOQiLH7lh1zsYI+ZtRwkkegDdB9fyGFW0TFm4utZILFNKTuAU8v++j9TSRw19TEel6x3cdOu2wBgm0ITISBuLaogh8W0cVZs+aPIUtwa3rmOf1nXcFbeQsQ79wyE2OL536iPyMIGFAn9mMXHFucIsxEZI5CYEBBoH8KpYKExHWhvkJgSQsSGvKzck8DRyJ1Ba7gRuKQQfl/RxkBURaEMKP4SNEQkYSBQnZiFUTnBa5HVr5z1xEQLNRSeZvIm4k2IE7AMuzHSVHQpimZwG1ihDoDo/yTz0G9RULxI8LbGYWhUgwHsy0MdedR4RMeEVGDsUIGDnifcuc8WdlCRw8aBt2JqXJ7ANPjDLDm2/W3APhQlQeANnrxMnL67ZzZAokoaFCeTB0YX8ldf76SpciNklp+Yo82JD4UhUFibgSsgcw8lkHZKXM9ohHAEmiWJ1BObKncACeT4Elhy9OKSWJLANZ/HxydcUOYWTWfdQmACF/QqnbrlfOUDVQ5uHkgRyNK6PS64Qty1JoAn/AA3O61jZh/PzNSayPIu51CGX8Zpk/dURmCt3Agvk+RC4OJG169mRVeFf3VRjXIg/a9yR1f3BW3t+nMgtMao6/2irPIGxfcw/s1jctiQBprYO/wjmEAfLehNZGw7eeOHJs9ix3+9bPyVQXelvuSkySGCuPBDAz3bTvg66ilyZgLubFc6WiEe8Th5onvyzS4+4XXwyp7ko8+GrHcDjPp4HWN9JHmDdFvj0GDs34Yu/mEZC6ZE8sIs+ZSjw8Xds5FkbGmb2eP5xyAOBbmZ3F5dBL236E9x6aENj70qbdd1vJQIGpKxt0KgAAAAASUVORK5CYII=" y="301.5938"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="65" x="719" y="376.7324">[v13.2 R1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="753.5" y="392.5576"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="753.5" y="408.8545"/><!--MD5=[799e9543975076390d2a6ceafec8df6c]
+entity queue--><rect fill="#FFFFFF" filter="url(#flq22g1qc22bm)" height="163.1563" style="stroke:#FF9900;stroke-width:1.5;" width="205" x="1008" y="491"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="39" x="1091" y="512.1387">«SQS»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="140" x="1040.5" y="529.8203">sqsEventQueue</text><image height="64" width="64" x="1078.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAADN0lEQVR4Xu1ZsarcMBB8H5w/yB/kC16dJlXapE6RLl0gneBdcPHAEMjBKw4eXAYPN2yk81rSiegcZIbDJ6/kndFqtbYfwpvHXeMhbdoXBoHeGAR6YxDojUGgNwaBBIe3758fP88fvvz69E3A3+ndR1xK7W9EMwLwD46efs5n94ABzGCcjlCHBgSgt/Ub58evPyA52gnOBhpff7/I7OX7UxMaNxGAB/BDfsPRzSDhRIkJWG128VFPAO7KdcicGvhAd9LAb0V3oZIAlKP38CO9mglof/s4NQQYNhC+SRBDfnJAaKVXN1FMgJrB+xtj1wJCMJwq5qGMAERq7j0BDpyH0vVQQIBzDamaRE4KjV+kTgEBJvtShYrA+MRvemkNuQSYNLF800sNAe25GPInOYvA5rjcnjKnHmZONVGqVBYBDurMrFLTmlsCDBiKTtL0xYqQRYDVjhP9EFXlEMjAMpoNlqjatvw8Br3yK6VtAriTczNBeZAHVISX8ANIS9Qc5zLv6xGAZqrV4NBmlNMYMuPEFp7sznYapH0tVJaj1+ZUrBJQrUYteZ5OvY0WJnL5h3bcezLPMSQghxhXdjS02PJWKjg79HUC6b6ooa1+9Fis8Mu/6YC8CofsPsUlYVczW6zq0nFtHq4T4EARb3qAdrkrVuJgDSJYejQAf9qTAw3SndjPgdcJMGZSP0hsWp5jKKdmmZl7rWO4zCrM6Lfte17EokHqqD+xlQSOy/NhHYFpqT0jAmDVkkBOCLGlLoQIhRBv1DKEtIjny2PudNlBmy9iK5MWsWx4i3PpIg5/p1EbJ5E8a2n0sCzxijRKmc43plFCi5XDOaMQyrPqpeM1eyM7LKWelSwiGcEjQFDLtD2Cok4en0wpEfFZiweLzPtuEwjlxZwNGxk8ZxdzLCVySIZMAn4eCPdfTh/2/kATysetw6ZSKXIJhL0/1If/4LVK2PuLLSIqfppg+mevFglxaBJLqnacxOqghkDY++t1QtWev0mvYe77gYNgtScaqr0dcMtTaXTs+IlJYKVEh8jkuJePfBaU1jK5epzu8DNrBBaeVF2Y7/9Ddy8MAr0xCPTGINAbg0BvDAK98QdJf/eBhOKQ2wAAAABJRU5ErkJggg==" y="533.5938"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="10" x="1105.5" y="608.7324">[]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1112.5" y="624.5576"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="1022" y="640.8545">Storage for insert events</text><!--MD5=[8fe37b8f8581fff1a2f3c8c6c0539d51]
+entity cognito--><rect fill="#FFFFFF" filter="url(#flq22g1qc22bm)" height="163.1563" style="stroke:#FF9900;stroke-width:1.5;" width="101" x="412" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="60" x="432.5" y="28.1387">«Cognito»</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="81" x="422" y="45.8203">userPool</text><image height="64" width="64" x="430.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAADMElEQVR4Xu2Zv4rcMBDG701TpUyVNk3qK1KnSB9IH8gDHHmBywMkEQiWQLjAsWA4nA99eBhrVpa0u7a8IPFxeG1Zmp9mRn98d+7N25vWnb11W+oArdUBWqsDtFYHaK0O0FqlAIf7D38+flpb6MV2vaw8gH/3fvj1e9yqoC/0aM1IKQ9wfPyBdvH339dva4t9gcGakVIGAINR2+KForfLYykDgIY4/PbRgoBdK3n3+eF7YwB/Vs5IF7sAoE3AKBQqvzw90Q97AbCvYJZkplrjYP2uAdAI7KNbWPBUxz0BcPHz1etVANA6urSuT0kDwFBaD8vghL+fv0QVXAAYQ8jhJq+vDHBGiZISkaObJQN4+DPyz3h1AHq8UFHU0VYdMC7kwxh8wp8MIbyIasewll0fwD5Kyc9zQCeoiM1GAG69HLgEgCMq0ULRSuQDf+56FpJpAAyMMeQD74hbNgJA03bCoSQY3BxAzGXRyYrrrT3AYDhZtIsEwE97ChgHs45hiuQ1rRynNNgIgAGQkrxCAL0g6Ke6ZVaAxfTM6gCFIoAe4JR8WONewiopXawIgJCNzh/shtcyzwiATtOUIu+50AsYsi+KKgDocV3QmZgrQyh3otV3JVUAHMy5nuMUnccFoDAM6ITyIY9UAVAoAZCJ/6SJaBku0l7FNe7UkqwIEBXdiF4cZDGRO1Wxd30AF2YSTixaYhbnGaR4NN5erXrL05fWKgALoolD+uOPn5a/Qj9kABgPJRNiiTgc2db8dAYqmQYyAE7Fq978lEsbweCRLZAVJzRsqlGnMJDyAC4wcEjOKHqB03seK55yxrCnEM/bapGKACi2Wyt5fTmdxHrxzzHsHXULJ1UBcKEIIFHBPSmvrfVuAsimwdYA9ICf0pSbKGu92yGAn4f1Yf6xyGb2csKItgNw5nwsDNZ6uiWVMFqbAtCsQX2s9+EzjK05zD8cLWhTAKf+XWIfVdURbQ3gp51CtMZRh+mcOaT3GpG2BnCBgWNMQzGZYi56Dp88ePOYOEafVAMACvEtFkvBnZK412oGQGGkuf/h6cdWyKoxwOXqAK3VAVqrA7RWB2itDtBaNw/wH5k/xyOceCd9AAAAAElFTkSuQmCC" y="49.5938"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="62" x="431.5" y="124.7324">[Userpool]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="464.5" y="140.5576"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="464.5" y="156.8545"/><!--MD5=[6c7d23c3691192c8763a9a841896b6ef]
+link user to cognito--><path d="M244.217,88.5 C276.877,88.5 353.46,88.5 406.627,88.5 " fill="none" id="user-to-cognito" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="411.697,88.5,402.697,84.5,406.697,88.5,402.697,92.5,411.697,88.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="131" x="262.5" y="82.6387">Authenication request</text><!--MD5=[753e8f781b43b4462cdb61e1906baac0]
+reverse link user to cognito--><path d="M249.513,98.065 C258.015,101.443 268.042,104.818 277.5,106.5 C321.695,114.361 333.861,111.229 378.5,106.5 C389.327,105.353 400.809,103.396 411.693,101.185 " fill="none" id="user-backto-cognito" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="244.434,95.976,251.2366,103.0981,249.0583,97.8774,254.279,95.6991,244.434,95.976" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="99" x="278.5" y="103.6387">Token response</text><!--MD5=[10446bf7b7b0dcdf28338bd98ad4de98]
+link cognito to cognitoToken--><path d="M518.234,88.5 C548.715,88.5 587.984,88.5 626.297,88.5 " fill="none" id="cognito-cognitoToken" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="631.45,88.5,622.45,84.5,626.45,88.5,622.45,92.5,631.45,88.5" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="513.207,88.5,522.207,92.5,518.207,88.5,522.207,84.5,513.207,88.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82" x="531.25" y="82.6387">Modify claims</text><!--MD5=[17be6abd970da6382a3c891dc5c7ce3e]
+link user to apiGateway--><path d="M212.977,113.019 C191.012,146.3 149.792,208.755 116.193,259.663 " fill="none" id="user-to-apiGateway" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="113.377,263.928,121.6732,258.6202,116.1314,259.755,114.9965,254.2132,113.377,263.928" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="116" x="152.5" y="219.1387">Make HTTP request</text><!--MD5=[b8c5189fe25035663db5811062b532b0]
+link apiGateway to postgrestHandler--><path d="M120.33,389.638 C130.263,394.358 140.196,397.049 150.128,397.712 " fill="none" id="apiGateway-to-postgrestHandler" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="155.323,397.874,146.4531,393.5932,150.3255,397.7169,146.2018,401.5892,155.323,397.874" style="stroke:#666666;stroke-width:1.0;"/><!--MD5=[413abf1a3517f0c5ec92a99b11522345]
+reverse link apiGateway to postgrestHandler--><path d="M124.978,289.302 C135.093,285.14 145.208,283.081 155.323,283.126 " fill="none" id="apiGateway-backto-postgrestHandler" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="120.33,291.362,130.1789,291.3729,124.9013,289.3363,126.9378,284.0588,120.33,291.362" style="stroke:#666666;stroke-width:1.0;"/><!--MD5=[911e953f90523b2959e204a1a3654b35]
+link postgrestHandler to postgrest--><path d="M337.611,340.5 C393.887,340.5 464.004,340.5 510.624,340.5 " fill="none" id="postgrestHandler-to-postgrest" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="515.625,340.5,506.625,336.5,510.625,340.5,506.625,344.5,515.625,340.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="138" x="355.75" y="320.6387">Starts postgrest inside</text><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="91" x="381.25" y="334.6074">the Lambda [1]</text><!--MD5=[5e86d3d424ddcc1a04a17e163efc3a77]
+reverse link postgrestHandler to postgrest--><path d="M343.05,355.87 C373.051,358.969 406.25,360.689 436.75,358.5 C463.05,356.612 492.231,352.514 515.754,348.704 " fill="none" id="postgrestHandler-backto-postgrest" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="337.877,355.319,346.4023,360.2505,342.8488,355.849,347.2503,352.2956,337.877,355.319" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="18" x="417.75" y="355.6387">[5]</text><!--MD5=[2c7c1818dbedfcd858fdb00597ec53b7]
+reverse link cognito to postgrest--><path d="M496.405,175.119 C517.514,228.424 542.837,292.37 554.718,322.373 " fill="none" id="cognito-backto-postgrest" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="494.506,170.323,494.1017,180.1636,496.3474,174.9716,501.5394,177.2173,494.506,170.323" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="125" x="516.5" y="212.1387">Validates token from</text><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="109" x="526.5" y="226.1074">supplied JWKs [2]</text><!--MD5=[caa0974e47230636de8da290b78f3748]
+link postgrest to postgres--><path d="M607.01,340.5 C621.934,340.5 639.118,340.5 656.311,340.5 " fill="none" id="postgrest-to-postgres" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="661.645,340.5,652.645,336.5,656.645,340.5,652.645,344.5,661.645,340.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="18" x="625.5" y="334.6387">[3]</text><!--MD5=[42404f2219d2d6d6e81d17583efd3a58]
+reverse link postgrest to postgres--><path d="M612.42,356.336 C616.479,357.204 620.54,357.945 624.5,358.5 C636.63,360.199 649.409,360.337 662,359.506 " fill="none" id="postgrest-backto-postgres" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="607.287,355.176,615.1831,361.0625,612.1639,356.2788,616.9476,353.2595,607.287,355.176" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="18" x="625.5" y="355.6387">[4]</text><!--MD5=[d13b0ad7d704a6b1203e7e1f52df2c42]
+link postgres to asyncProcessing--><path d="M841.165,340.5 C887.346,340.5 944.215,340.5 993.779,340.5 " fill="none" id="postgres-to-asyncProcessing" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="998.859,340.5,989.859,336.5,993.859,340.5,989.859,344.5,998.859,340.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="98" x="869" y="320.6387">Insert events on</text><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="121" x="859.5" y="334.6074">listings.listings table</text><!--MD5=[09ca460b7deb02fe59244ad44c9036a9]
+link asyncProcessing to queue--><path d="M1110.5,422.266 C1110.5,442.79 1110.5,464.915 1110.5,485.68 " fill="none" id="asyncProcessing-to-queue" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1110.5,490.928,1114.5,481.928,1110.5,485.928,1106.5,481.928,1110.5,490.928" style="stroke:#666666;stroke-width:1.0;"/><!--MD5=[eab06a6df1af0602d7cf3b08138367b9]
+reverse link futureAsyncHandler to queue--><path d="M861.077,572.5 C907.358,572.5 961.621,572.5 1007.7,572.5 " fill="none" id="futureAsyncHandler-backto-queue" style="stroke:#666666;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#666666" points="856.051,572.5,865.051,576.5,861.051,572.5,865.051,568.5,856.051,572.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="111" x="874.5" y="552.6387">Future comsuming</text><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44" x="910" y="566.6074">lambda</text><!--MD5=[740ed99575b679ff6260883edbc53935]
+@startuml
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v7.0/dist
+!include AWSPuml/AWSCommon.puml
+!include AWSPuml/Compute/Lambda.puml
+!include AWSPuml/Database/RDSPostgreSQLinstance.puml
+!include AWSPuml/SecurityIdentityAndCompliance/Cognito.puml
+!include AWSPuml/ApplicationIntegration/SQS.puml
+!include AWSPuml/NetworkingAndContentDelivery/APIGateway2.puml
+
+actor "User" as user
+rectangle postgrest
+
+APIGateway2(apiGateway, "", "", "")
+Lambda(postgrestHandler, "postgrestLambda", "HTTP Trigger", "Postgrest handler")
+Lambda(cognitoToken, "cognitoPreTokenGenerator", "Cognito PreAuth Trigger", "Cognito add claims handler")
+Lambda(asyncProcessing, "asyncEventProcessing", "", "Handles Postgres events")
+Lambda(futureAsyncHandler, "asyncHandler", "SQS Trigger", "Handles processing SQS messages")
+RDSPostgreSQLinstance(postgres, "rdsDBInstance", "v13.2 R1", "")
+SQS(queue, "sqsEventQueue", "", "Storage for insert events")
+Cognito(cognito, "userPool", "Userpool", "")
+
+user -right-> cognito: Authenication request
+cognitoToken <-left-> cognito: Modify claims
+cognito -left-> user: Token response
+
+user -down-> apiGateway: Make HTTP request
+apiGateway -right-> postgrestHandler
+postgrestHandler -right-> postgrest: Starts postgrest inside the Lambda [1]
+postgrest -up-> cognito: Validates token from supplied JWKs [2]
+postgrest -right-> postgres: [3]
+postgres -left-> postgrest: [4]
+postgrest -left-> postgrestHandler: [5]
+postgrestHandler -left-> apiGateway
+postgres -right-> asyncProcessing: Insert events on listings.listings table
+asyncProcessing -down-> queue
+queue .left.> futureAsyncHandler: Future comsuming lambda
+@enduml
+
+@startuml
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+
+
+
+
+
+
+
+
+sprite $Lambda [64x64/16z] {
+xPQ7QWGn44CrFV__m-bcPHy63-b5ARTDw1qZXhtxLlhNloecjVsAIT7t-vNkaBw_fhDuap-XVVzycc_o1xJlPmcoxNyBW2BhMQDF1D3fZzO0W7Nyhl8e1U82
+g8R_Tl3U0hXjNW7LzmS3UDVDWtyxW7K1t1S0QG4aa6y1KC2cvcKB8262cWPldJrY28TDpKj89xuA1D1SP0P_jHRQ0CFK1k3uKLe626WZVdmQlBL92Tcw01pF
+0ArDkdOc8Gs0qLawD4HZamPiEIG0Xnt6yzTL1X0HZOETGOVKF0S0-C7Eed5pywegu2VnkHuEvTRFcHpAntl_cYaBre6VSkYGkBP-pgIX4y21dp8DiPdBtf-0
+NwzjjGucNcKxluFaQo_vti6BQwrmoxtle7_zwm4
+}
+
+skinparam rectangle<<Lambda>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<Lambda>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+sprite $RDSPostgreSQLinstance [64x64/16z] {
+xTS7ZlCs443XDuNJxd_WW92DE5edaMoKbFzjSVtGE21108sUstKeHsi-RB7BcUcCcsNFJ09hffqFyfvPw4mh7wKzep5ZV9ZDH4_pSJqzatnSpim4ApE4ruGV
+QNKAU5K8B0U8mrTvDI-jv9nCsb9ybdL1nwjVo2Yw7F2bakNi9uQgAROC7O73oHZrq-ja9z6nl2TPart4j5l7c4nmKEXrycdPPA8Z5R2VqauKKL2BI7pQq56W
+ukIxKga5OpuXsyiegpQaAof1OapU-mNi_pA6LRtwWbvc0b39633-pcUX8-n_cT0XUVWAZYh80Xyv-O3jgeFCBjQKM7SVtgRAfQjRaUvgXvggU7eLTkAs_pcW
+-vb48Gges_xd0eXt2QYPwTE_JKLwyIQ9Tex-og_kv7qY5pm8VzFJt-YNbzr7NcnbzIRT5QwmgY_vzuTSEN3Ln-owCdPPiokzwdFZfS8piUYPqMlUtnroicRg
+ceyP-sRzuktNf6xuAJjfxxdkTvrk8Y2Yjd9srttDe-vvr7N3YwwQbpfT_8u7H7r5PiHo5U2UF_KlyukVvGq_gVmngvlpKs4gx4Gz-jxyz1prxldyXjVp1bJh
+zloehyXTBFirFpVtd_n-_mbNaKr5FVkp_UTbVERU_XFrxVo8UHpZux_FJtwrVZtzbOyP-sRzhztVzC_EdxXuV_JJ-jkn_ddn_gfepQENxMDTlJyxeD7dyuSZ
+ZRxW0RNd_k7wmBy1
+}
+
+skinparam rectangle<<RDSPostgreSQLinstance>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<RDSPostgreSQLinstance>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+sprite $Cognito [64x64/16z] {
+xTHRSeCm38NX8yd2Fkh-zzknubmP1vndlfTSu1ygTwAukLmkhHvfCKV5CMNC6CoF63Gc28rZYZOR7XRl-2aYod4_FmzRwm5z0-5QRz5LzriZl_HD0C2OVVnz
+wyNqJUyfA7NBjo5GaozzsfsNzukAsljktXlVv40AvXcWH8WqskBy8jatb37_Oc-e_Nt1zjlvDqWb7S8pVT6XZ9uEG038gUSR1hlrL4WnaLA0SgBdG_QgC8wh
+YY9Od1yepqyYPd7GRzwrSA_P2-E1-Nuh_D8hkes0PUznMlQjTenQM_RjOvr4jp1_PPTNNG6eSwL__Y-znwe0_7GVnP9754W-cGwKetxFdskVEliB2E5qipol
+SBf17D2TDdvyGwr_stG25-pK28hmdWCa96QuytOm5TWY38mLkNjA6Ndlss9lGO6FVBdFWPjWvBa6bkGER3Bo2eir5HeHR94KDHOPRFT-1HNQnXg3CfRH02rU
+5336BwgYqng_OcwcfylbyWy
+}
+
+skinparam rectangle<<Cognito>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<Cognito>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+sprite $SQS [64x64/16z] {
+x5FN0Xin21DWbl__WrkSSNlrDLKs3aWwSVq7y9FuZtJJlx38VsWEPNp16i-wdQkhcRkRDW8WyO1R0BQSYo6WtRLX0FkcI22_rTu0soddL3-5W0-iEg0tsFdG
+Pz2b0gtsGmJWvxc1ukByD0M6Nzbhfyb9FqSIuivXQ2vED6vGs2IkBL8Cdf8x4U3JsYK3pNDyzOPPAYP7_PdBg01Y4KOX3lutmGMWcMj14nf3cimlkZ9eHu8L
+sqTd2VTgoeYiKL4s1hS0J83jRbQ-cBp69FWRIorDW_PwBsvR6XfrUoUOFLDgG7qjZ4dPdQ0zGJabDGCZttD2Y0YGRwa7n4SD5cZVaKVzRQS_Nlq-wp_MttVq
+zz9ln_e3iEp1PzVF1e-CR10x-PNiHNwvpO_tyYk44BZAv_kJMYp-O7_fP7_Fxv_Okt-KuyyepRyKbX-KbbyKbf-KbjyqgJyGoOP0_KLX_KbX_KrX-u72zWjb
+xIVwjTymsu_34uo2KG
+}
+
+skinparam rectangle<<SQS>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<SQS>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+sprite $APIGateway2 [64x64/16z] {
+xTPLOlGm30JWYMD9uz7zp_ipjjg0jzpCmjjd9dsqNBb26tgGOJoiEs1w40CwZ-hQ7oc1Ax1uL3vy0LRkQsNjKmzAA7HpIQgz97cxMK80BQHjBqK3elB-7Urx
+oU2rzsFUZ_ZKVycJldDeHFpw4zdFUO0PG2G1om7Wd5zjQDZFFqfcwylst_GWitxmFc_mdFJH9JNGOiexG16DW4_uZYM-CyjOq4zx0f5I0vK1SAP-YcWIP-fF
+6J0CdWHiQlruLyEGki_EFz7kMdyElykBe_9lxFoQFp_cpw_vy_Fjdr_pFe_ulEcRZtq_lDMU2u3LnvOVlW9Og3BilufWvVaB6tKxj0L0gtmhSLr4uGiyyNxy
+KBbovIi
+}
+
+skinparam rectangle<<APIGateway2>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+skinparam participant<<APIGateway2>> {
+    BackgroundColor #FFFFFF
+    BorderColor #FF9900
+}
+
+actor "User" as user
+rectangle postgrest
+
+rectangle "==\n<color:#693CC5><$APIGateway2></color>\n//<size:12>[]</size>//\n\n " <<APIGateway2>> as apiGateway
+rectangle "==postgrestLambda\n<color:#D86613><$Lambda></color>\n//<size:12>[HTTP Trigger]</size>//\n\n Postgrest handler" <<Lambda>> as postgrestHandler
+rectangle "==cognitoPreTokenGenerator\n<color:#D86613><$Lambda></color>\n//<size:12>[Cognito PreAuth Trigger]</size>//\n\n Cognito add claims handler" <<Lambda>> as cognitoToken
+rectangle "==asyncEventProcessing\n<color:#D86613><$Lambda></color>\n//<size:12>[]</size>//\n\n Handles Postgres events" <<Lambda>> as asyncProcessing
+rectangle "==asyncHandler\n<color:#D86613><$Lambda></color>\n//<size:12>[SQS Trigger]</size>//\n\n Handles processing SQS messages" <<Lambda>> as futureAsyncHandler
+rectangle "==rdsDBInstance\n<color:#3B48CC><$RDSPostgreSQLinstance></color>\n//<size:12>[v13.2 R1]</size>//\n\n " <<RDSPostgreSQLinstance>> as postgres
+rectangle "==sqsEventQueue\n<color:#CC2264><$SQS></color>\n//<size:12>[]</size>//\n\n Storage for insert events" <<SQS>> as queue
+rectangle "==userPool\n<color:#D6242D><$Cognito></color>\n//<size:12>[Userpool]</size>//\n\n " <<Cognito>> as cognito
+
+user -right-> cognito: Authenication request
+cognitoToken <-left-> cognito: Modify claims
+cognito -left-> user: Token response
+
+user -down-> apiGateway: Make HTTP request
+apiGateway -right-> postgrestHandler
+postgrestHandler -right-> postgrest: Starts postgrest inside the Lambda [1]
+postgrest -up-> cognito: Validates token from supplied JWKs [2]
+postgrest -right-> postgres: [3]
+postgres -left-> postgrest: [4]
+postgrest -left-> postgrestHandler: [5]
+postgrestHandler -left-> apiGateway
+postgres -right-> asyncProcessing: Insert events on listings.listings table
+asyncProcessing -down-> queue
+queue .left.> futureAsyncHandler: Future comsuming lambda
+@enduml
+
+PlantUML version 1.2021.6beta6(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

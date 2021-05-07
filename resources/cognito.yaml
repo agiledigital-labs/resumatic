@@ -1,0 +1,41 @@
+Resources:
+  userPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: ${self:provider.stage}-postgrest
+      LambdaConfig:
+        PreTokenGeneration: !GetAtt CognitoPreTokenGeneratorLambdaFunction.Arn
+      Schema:
+        - AttributeDataType: String
+          Name: role
+          Mutable: true
+        - AttributeDataType: String
+          Name: preferred_username
+          Mutable: true
+        - AttributeDataType: String
+          Name: email
+          Mutable: true
+      AutoVerifiedAttributes:
+        - email
+
+  userPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref userPool
+      ExplicitAuthFlows:
+        - ALLOW_USER_PASSWORD_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+      PreventUserExistenceErrors: ENABLED
+      ClientName: CliAuth
+  userPoolLambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:invokeFunction
+      Principal: cognito-idp.amazonaws.com
+      FunctionName: !GetAtt CognitoPreTokenGeneratorLambdaFunction.Arn
+      SourceArn: !GetAtt userPool.Arn
+
+Outputs:
+  CognitoClientId:
+    Description: App Client Id for default Cognito client
+    Value: !Ref userPoolClient

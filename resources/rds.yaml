@@ -1,0 +1,69 @@
+Resources:
+  rdsDBInstance:
+    Type: AWS::RDS::DBInstance
+    DependsOn: lambdaExecutionRole
+    Properties:
+      Engine: postgres
+      EngineVersion: 13.2
+      AllocatedStorage: 5
+      DBInstanceClass: db.t3.micro
+      PubliclyAccessible: true
+      StorageType: standard
+      DBName: ${self:custom.databaseCommonEnvs.DB_NAME}
+      Port: ${self:custom.databaseCommonEnvs.DB_PORT}
+      MasterUsername: ${self:custom.databaseCommonEnvs.DB_USERNAME}
+      MasterUserPassword: ${self:custom.databaseCommonEnvs.DB_PASSWORD}
+      VPCSecurityGroups:
+        - !GetAtt rdsSecurityGroup.GroupId
+      AssociatedRoles:
+        - RoleArn: !GetAtt lambdaExecutionRole.Arn
+          FeatureName: Lambda
+  rdsSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: 'RDS instance for low-ceremony-postgrest'
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          FromPort: ${self:custom.databaseCommonEnvs.DB_PORT}
+          ToPort: ${self:custom.databaseCommonEnvs.DB_PORT}
+          IpProtocol: tcp
+        - CidrIpv6: ::/0
+          FromPort: ${self:custom.databaseCommonEnvs.DB_PORT}
+          ToPort: ${self:custom.databaseCommonEnvs.DB_PORT}
+          IpProtocol: tcp
+  lambdaExecutionPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      ManagedPolicyName: RDSExecuteLambda
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - 'lambda:InvokeFunction'
+            Resource: ${self:custom.ASYNC_LAMBDA_ARN}
+  lambdaExecutionRole:
+    Type: AWS::IAM::Role
+    DependsOn: lambdaExecutionPolicy
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: rds.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - !Ref lambdaExecutionPolicy
+Outputs:
+  RdsHost:
+    Description: Host for RDS
+    Value:
+      !Join [
+        ':',
+        [
+          !GetAtt rdsDBInstance.Endpoint.Address,
+          !GetAtt rdsDBInstance.Endpoint.Port,
+        ],
+      ]
