@@ -1,4 +1,3 @@
-import React from 'react';
 import { Admin, Resource, ListGuesser } from 'react-admin';
 import postgrestRestProvider, {
   authProvider,

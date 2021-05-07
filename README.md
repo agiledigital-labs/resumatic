@@ -42,6 +42,8 @@ npm run sls deploy -- -s some_stage --DB_PORT 1234 --DB_PASSWORD aBetterPassword
 
 ### Deploying
 
+YOU NEED NODE 14
+
 To deploy everything, run:
 
 ```shell
