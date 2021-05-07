@@ -1,6 +1,6 @@
 # resumatic
 
-Resumes that wins bids, or CVs ¯\_(ツ)_/¯
+Resumes that wins bids, or CVs ¯\_(ツ)\_/¯
 
 ## Project
 
@@ -31,6 +31,7 @@ export DB_USERNAME=test
 export DB_PASSWORD=password-to-change
 export DB_SCHEMA=listings
 export DB_ANON_ROLE=anon
+export AWS_REGION=ap-southeast-2
 ```
 
 These variables can also be passed in as command-line arguments to Serverless, e.g.
