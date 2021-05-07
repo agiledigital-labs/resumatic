@@ -1,16 +1,24 @@
-import { Admin, Resource, ListGuesser } from 'react-admin';
+import { Admin, Resource, ListGuesser, fetchUtils} from 'react-admin';
 import postgrestRestProvider, {
-  authProvider,
 } from '@raphiniert/ra-data-postgrest';
+
+const jwt = "PUT JWT FROM SLACK HERE";
+const httpClient = (url: string, options: fetchUtils.Options = {}) => {
+    if (!options.headers) {
+        options.headers = new Headers({ Accept: 'application/json' });
+    }
+    // TODO: YOLO
+    // @ts-ignore
+    options.headers.set('Authorization', 'Bearer '+ jwt);
+    return fetchUtils.fetchJson(url, options);
+};
+const dataProvider = postgrestRestProvider('https://j4m8i8hfw5.execute-api.ap-southeast-2.amazonaws.com', httpClient);
 
 const App = () => (
   <Admin
-    dataProvider={postgrestRestProvider(
-      'https://j4m8i8hfw5.execute-api.ap-southeast-2.amazonaws.com'
-    )}
-    authProvider={authProvider}
+    dataProvider={dataProvider}
   >
-    <Resource name="listings" list={ListGuesser} />
+    <Resource name="jobs" list={ListGuesser} />
   </Admin>
 );
 
