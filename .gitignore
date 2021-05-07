@@ -3,3 +3,4 @@ node_modules
 .envrc
 .serverless
 .generated_diagrams/
+.envrc
