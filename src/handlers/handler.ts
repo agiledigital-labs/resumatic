@@ -113,7 +113,11 @@ export const index = async (
   const formattedResponse = {
     statusCode: response.status,
     body: JSON.stringify(response.data),
-    headers: response.headers,
+    headers: {
+      ...response.headers,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+    },
   };
 
   return formattedResponse;

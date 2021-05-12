@@ -27,9 +27,12 @@ plugins:
   - serverless-offline
   - serverless-scriptable-plugin
   - serverless-prune-plugin
+  - serverless-finch
 
 custom:
   scriptHooks:
+    before:client:deploy:deploy:
+      - npm run build:client
     before:package:createDeploymentArtifacts:
       - npm run build:migrationsLayer
       - npm run build:lambdaLayer
@@ -56,6 +59,11 @@ custom:
     - - 'arn:aws:lambda:${self:provider.region}:'
       - !Ref 'AWS::AccountId'
       - ':function:${self:service}-${self:provider.stage}-asyncEventProcessing'
+  client:
+    distributionFolder: client/build
+    indexDocument: index.html
+    sse: AES256
+    bucketName: ${self:service}-${self:provider.stage}-admin-dloc-xyz
 
 functions:
   postgrestLambda:
@@ -64,6 +72,7 @@ functions:
       - httpApi:
           path: /{proxy+}
           method: '*'
+          cors: true
     environment:
       <<: *databaseCommonEnvs
       DB_SCHEMA: ${self:custom.DB_SCHEMA}
